@@ -1,0 +1,298 @@
+
+
+
+@import "bootstrap-responsive";
+@import "compass";
+
+
+$gridFluidColumnWidth: 6.38298%;
+$gridFluidGutterWidth: 2.12766%;
+
+@mixin makeFluidRow() {
+  width: 100%;
+  @include clearfix();
+}
+@mixin makeFluidColumn($columns: 1, $offset: 0, $marginRate: 1) {
+  float: left;
+  margin-left: (($gridFluidColumnWidth * $offset) + ($gridFluidGutterWidth * ($offset - 1)) + ($gridFluidGutterWidth * 2)) * $marginRate;
+  width: ($gridFluidColumnWidth * $columns) + ($gridFluidGutterWidth * ($columns - 1));
+  *width: ($gridFluidColumnWidth * $columns) + ($gridFluidGutterWidth * ($columns - 1)) - 0.0532%;
+
+  &:first-child {
+        margin-left: 0;
+  }
+}
+
+
+/** Global Fonts **/
+$Normal: 'ProximaNova-Regular';
+$Semibold: 'ProximaNova-Semibold';
+$Bold: 'ProximaNova-Bold';
+$Italic: 'ProximaNova-RegularIt'; 
+
+$margin_padding: 15px;
+$icon_font_size: 20px;
+
+
+
+/**common styles***/
+	$maroon:#96171A;
+	$yellow: #E5A053;
+	.ya-link,.ya-link:hover,.ya-link:focus{color: #0088CC; font-family: $Bold; font-size:15px;}
+	.ya-two-column-row{
+		 @include makeFluidRow();
+		.ya-column-1{@include makeFluidColumn(6);}
+		.ya-column-2{@include makeFluidColumn(6);}		
+	}
+	.ya-page-title{ 
+		padding-bottom: 10px;
+        margin: $margin_padding 0;
+        border-bottom: 2px solid #333; 
+	    color: #B4341D;		
+	}
+	@mixin input-medium(){
+	  width: 150px;
+	}
+	@mixin input-small(){
+	  width: 90px;
+	}
+	@mixin input-large(){
+	  width: 210px;
+	}
+	$icon_font_size: 20px;
+	span[data-icon] {
+	  font-size: $icon_font_size;
+	 
+	  @media (max-width: 767px) {
+		font-size: 18px;
+	  }
+	}
+	.ya-button-row{ 
+		@media(max-width:767px){text-align:center;.btn{@include input-medium();} }
+	}
+	.btn-link,btn-link:hover,btn-link:focus{color:$maroon !important; font-size:15px; padding:0; font-family: $Bold;}
+	.ya-read-more-less{display:block;  text-decoration:none !important;
+      .ya-label{padding: 2px 0 0;display:inline;}	  
+      .ya-show-link-icon{margin: 2px 0 0;display:inline;}
+    }
+	.ya-grey-border-bottom {
+    padding-bottom: 15px;
+    margin: $margin_padding 0;
+    border-bottom: 2px solid #ccc;
+  }
+  .ya-black-border-bottom {
+    @extend .ya-grey-border-bottom;
+    border-bottom: 2px solid #333;
+  }
+  .ya-social-icons { 
+   line-height: normal;
+    .ya-icon {
+      color: #909090;
+      display: inline;
+      font-size: 1.7em;
+	  margin:0 2px 0 0;
+      }
+  }
+
+
+
+$PageHeading: 36px $Normal;
+$PageHeading2: 28px $Normal;
+$PageHeading3: 20px $Normal;
+$PageHeading4: 18px $Normal;
+  h1 {
+    font: $PageHeading;
+    @media (max-width: 460px) {
+      font-size: 25px;
+    }
+  }
+  h2 {
+    font: $PageHeading2;
+    @media (max-width: 460px) {
+      font-size: 21px;
+    }
+  }
+  h3 {
+    font: $PageHeading3;
+    @media (max-width: 460px) {
+      font-size: 18px;
+    }
+  }
+  h4 {
+    font: $PageHeading4;
+    @media (max-width: 460px) {
+      font-size: 16px;
+    }
+  }
+
+  .ya-main-content{
+	@media (max-width:480px){
+		padding:20px 15px;
+	}
+	@media (min-width: 768px) and (max-width: 979px){
+		padding:20px 15px;
+	}
+  }
+  body{
+	@media (max-width:480px){
+		padding:0;
+	}
+  }
+
+.ya-directory{
+	
+
+	.ya-find-teacher,.ya-find-training-school{	
+		 	
+		.ya-column-one{			
+			@media (min-width: 768px) and (max-width: 1199px){
+				@include makeFluidColumn(3,0,0);
+				.ya-control-row{@include makeFluidColumn(12,0,0);}
+				.checkbox{font-size:13px;}
+			}
+		}
+		.ya-column-two{
+			@media (min-width: 768px) and (max-width: 1199px){
+				@include makeFluidColumn(9);
+				.checkbox{font-size:13px;}
+			}
+		}
+		.ya-offering-training-in{
+			@media (min-width: 768px) and (max-width: 1199px){
+				@include makeFluidColumn(4.4); 				
+			}
+		}
+		.ya-training-schedues{
+			@media (min-width: 768px) and (max-width: 1199px){
+				@include makeFluidColumn(7.7,0,0);				
+			}
+		}
+
+		.ya-button-row{text-align:center;}
+		.ya-read-more-less{display:inline-block;}
+		.ya-search-icon{font-size: 13px; margin:2px 2pxpx 0 0;}
+		.ya-more-search-option{@include input-large(); margin:10px 0; text-decoration:none;}
+
+		.ya-btn-search{ width:100%; @media(max-width:767px){@include input-medium();}}
+		.ya-btn-search-2{ @include input-medium(); margin:10px 0;}
+		
+		.ya-column-1{@media(max-width:767px){@include makeFluidColumn(12,0,0);}}
+		.ya-column-2{@media(max-width:767px){@include makeFluidColumn(12,0,0);}}
+		.ya-button-row-border{@extend .ya-black-border-bottom; border-color:$maroon; margin:0 0 20px 0; padding:0;
+			.ya-more-search-option{@include input-large(); 
+		     	 background: none repeat scroll 0 0 #FFFFFF;
+				margin: 10px 0 -10px;
+				width: 210px;
+			}	
+		}
+
+
+		}
+	
+	.ya-search-result-panel,.ya-search-training-school-panel{
+	
+		.ya-pagination{margin:10px 0;}	
+		.ya-result-block{margin:0;
+				@extend .ya-black-border-bottom;
+		
+			.ya-left-section{
+				margin-left:0;
+				ol{list-style-type:upper-alpha; list-style-position: inside; margin:0;}
+				.ya-record-row{@extend .ya-grey-border-bottom; }
+				.ya-record-row:last-child{border:0 none; margin:0; padding:0;}
+				.ya-message-button-row{margin:0 !important;}
+				.ya-two-column-row{
+					margin:0 0 15px 0;
+				@include makeFluidRow();
+					.ya-column-1{@include makeFluidColumn(4);
+						@media(max-width:480px){
+							@include makeFluidColumn(6);
+						}
+						@media(max-width:540px){
+							@include makeFluidColumn(5);
+						}
+					}
+					.ya-column-2{
+						li{@include makeFluidRow();}
+						@include makeFluidColumn(8);
+						@media(max-width:480px){
+							@include makeFluidColumn(6);
+						}
+						@media(max-width:540px){
+							@include makeFluidColumn(7);
+						}
+					.ya-name{margin-top:0;
+						@media(max-width:767px){font-weight:bold;}
+					}
+						ul{margin:0; list-style-type: none;
+							li{border:0 none; margin:0;padding:0;}
+						}
+					}
+				}
+				.ya-row{@include makeFluidRow();}
+				.ya-social-icons{
+					.ya-icon{}
+				}
+				.ya-read-more-less{margin:2px 0;}
+				.ya-more-details-panel{
+					margin: 10px 0 0 0;
+					.ya-label{ font-family: $Bold;@include makeFluidColumn(3);
+						@media(max-width:480px){@include makeFluidColumn(4);}
+					}
+					.ya-value{ font-family:$Normal;@include makeFluidColumn(9);
+						@media(max-width:480px){@include makeFluidColumn(8);}
+					}
+					p{margin:10px 0;}
+				}
+
+			}
+	
+		}
+		.ya-message-btn{
+			span[data-icon] {    font-size: 15px;}
+			@media(min-width: 768px) and (max-width: 979px){
+				padding:0;
+				span[data-icon] {    font-size: 12px;}
+				.ya-label{font-size:12px;}
+			}
+			@media(max-width:480px){
+				padding:0;
+				span[data-icon] {    font-size: 12px;}
+				.ya-label{font-size:12px;}
+			}
+		}
+		.ya-school-rating{
+            .ya-rating-stars{
+				display: inline-block;    margin: 4px 0 0;
+				.ya-star{margin:0 0 0 5px;color:$yellow; float:left; font-size: 17px; }
+            }
+			.ya-rating-number{float: left;font-size: 25px;line-height: 27px;}
+        }
+		.ya-programs-panel{
+			@include makeFluidRow();
+			.ya-title{@include makeFluidColumn(12); font-family: $Semibold;
+				
+			}
+			.ya-link-row{
+				@include makeFluidColumn(12,0,0); 				
+				
+				.ya-link{ color: #0088CC;  margin:10px 0;font-family: $Bold;}
+			}
+			.ya-programs-panel-block{
+					@include makeFluidRow();
+					.ya-name{@include makeFluidColumn(4);
+						@media(max-width:767px){@include makeFluidColumn(12);}
+					}
+					.ya-program-code{@include makeFluidColumn(4);
+						@media(max-width:767px){@include makeFluidColumn(6,0,0);}
+					}
+					.ya-date{@include makeFluidColumn(4);
+						@media(max-width:767px){@include makeFluidColumn(6,0,0);}
+					}
+			}
+		}
+	}
+
+	
+		
+}
