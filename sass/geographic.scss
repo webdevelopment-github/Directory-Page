@@ -1,7 +1,6 @@
 
 
 
-@import "bootstrap-responsive";
 @import "compass";
 
 
@@ -100,7 +99,7 @@ $PageHeading4: 18px $Normal;
 
   .ya-main-content{
 	@media (max-width:480px){
-		padding:20px 15px;
+		padding:20px 0;
 	}
 	@media (min-width: 768px) and (max-width: 979px){
 		padding:20px 15px;
