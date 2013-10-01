@@ -115,3 +115,7 @@ h4 {
 .ya-geographic .ya-teachers li, .ya-geographic .ya-schools li {
   margin: 0 0 10px 0;
 }
+
+.DnnModule {
+  margin-bottom: 0 !important;
+}
